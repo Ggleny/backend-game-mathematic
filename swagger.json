@@ -1,0 +1,127 @@
+{
+    "info": {
+      "title": "Game API Rest",
+      "version": "1.0.0",
+      "description": "API TP"
+    },
+    "host": "localhost:8000",
+    "basePath": "/api/v1",
+    "swagger": "2.0",
+    "contact": {
+        "email": "ggianirodriguez@gmail.com"
+    },
+    "tags": [
+        {
+          "name": "Game",
+          "description": "Access game config"
+        }
+    ],
+    "schemes":["http"],
+    "produces": [
+        "application/json"
+    ],    
+    "paths": { 
+      "/game": {
+            "get": {
+              "tags": [
+              ],
+              "summary": "Find All Games Config",
+              "description": "return multiples Games",
+              "produces": [
+                "application/json"
+              ],
+              "parameters": [
+              ],
+              "responses": {
+                "200": {
+                  "description": "successful operation",
+                  "content":{
+                    "application/json":{
+                        "schema": {
+                            "$ref": "#/definitions/Game"
+                        }
+                    }
+                  },
+                  "schema": {
+                    "$ref": "#/definitions/Game"
+                  }
+                },
+                "500": {
+                    "description": "Internal Error"
+                }
+              }
+            }
+        },
+        "/game/{gameId}": {
+            "get": {
+              "tags": [
+                "gameId"
+              ],
+              "summary": "Find a Game Config",
+              "description": "return a Game",
+              "produces": [
+                "application/json"
+              ],
+              "parameters": [
+                {
+                  "name": "gameId",
+                  "in": "path",
+                  "required": true,
+                  "type": "string"
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "successful operation",
+                  "content":{
+                    "application/json":{
+                        "schema": {
+                            "$ref": "#/definitions/Game"
+                        }
+                    }
+                  },
+                  "schema": {
+                    "$ref": "#/definitions/Game"
+                  }
+                },
+                "400": {
+                  "description": "Invalid GameId value"
+                },
+                "404": {
+                    "description": "Game not found"
+                },
+                "500": {
+                    "description": "Internal Error"
+                }
+                
+              }
+            }
+        }
+    },
+    "definitions": {
+        "Article": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "integer",
+                "format": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "gameId": {
+                "type": "string"
+              },
+              "levels": {
+                "type": "array"
+              }
+            },
+            "json": {
+              "name": "Game"
+            }
+          }
+     },
+    "responses": { },
+    "parameters": { },
+    "securityDefinitions": { }
+  }
