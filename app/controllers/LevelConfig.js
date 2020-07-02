@@ -1,9 +1,9 @@
-const Level = require('../models/Level');
+const LevelConfig = require('../models/LevelConfig');
 
 module.exports = {
     create : async (req, res) =>{
         const { name, description,config } = req.body;
-        const level = await Level.create({
+        const level = await LevelConfig.create({
             name,
             description,
             config,
@@ -12,7 +12,7 @@ module.exports = {
         return res.send(level)
     },
     find : async (req, res) => {
-        const level = await Level.find()
+        const level = await LevelConfig.find()
         return res.send(level)
     },
 }

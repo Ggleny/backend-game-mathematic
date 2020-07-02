@@ -17,7 +17,8 @@ module.exports = {
             res.json({"success" : false,"message" : "Login failed ! Please register"});
         } else {
             req.session.key = player;
-            res.json({"success" : true,"message" : "Login success."});
+            player.success = true;
+            res.json(player);
         }
     },
 

@@ -7,8 +7,8 @@ const GameSchema = new mongoose.Schema({
     description: {
         type:String
     },
-    levels : [
-        {type: mongoose.Schema.Types.ObjectId,ref:'Level'}
+    levelsConfig : [
+        {type: mongoose.Schema.Types.ObjectId,ref:'LevelConfig'}
     ]
 },{
     timestamps: true
