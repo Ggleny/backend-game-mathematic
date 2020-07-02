@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 
 const swaggerUi = require('swagger-ui-express');
 var session = require('express-session');
+/*
 var {redisStore} = require('./app/redis');
 
 app.use(session({
@@ -16,6 +17,7 @@ app.use(session({
   saveUninitialized: false,
   resave: false
 }));
+*/
 
 var corsOptions = {
   origin: 'http://localhost:3000',
