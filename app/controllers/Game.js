@@ -9,13 +9,12 @@ module.exports = {
             name,
             description
         }
+
         if(levelsConfig){
             let levels = await LevelConfig.create(levelsConfig);
             gameConfig.levelsConfig = levels.map(v=>v._id);
         }
         
-        console.log("create Game",gameConfig);
-
         const game = await Game.create(gameConfig)
         return res.send(game)
     },

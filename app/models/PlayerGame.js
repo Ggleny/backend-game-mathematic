@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const ScoreSchema = new mongoose.Schema({
-    play: {
-        type:Number
+
+    sessionId:{
+        type:String
     },
     player: {
         type: mongoose.Schema.Types.ObjectId,ref:'Player'
@@ -9,9 +10,9 @@ const ScoreSchema = new mongoose.Schema({
     game: {
         type: mongoose.Schema.Types.ObjectId,ref:'Game'
     },
-    levelPlay:{
+    levelPlay:[{
         type: mongoose.Schema.Types.ObjectId,ref:'LevelPlay'
-    },
+    }],
     scoreTotal:{
         type: Number,
     }
@@ -19,4 +20,4 @@ const ScoreSchema = new mongoose.Schema({
     timestamps: true
 })
 
-module.exports = mongoose.model('Score',ScoreSchema);
+module.exports = mongoose.model('PlayerGame',ScoreSchema);
