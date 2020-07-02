@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 const ConnectGameDataSchema = new mongoose.Schema({
-    numbersInOperator :  [{
-        type: Number
+    numbersInOperator :  [{ //Ej en la foto es 7 y 6
+        type: Number 
     }],
     answer : {
-        type: Number
+        type: Number //Ej para el chanchito ese seria 13
     }
 },{
     timestamps: true

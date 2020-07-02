@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 const ColouringGameDataSchema = new mongoose.Schema({
     numberValue :  {
-        type: Number
+        type: Number //7
     },
-    numbersInOperatorBubble : [
-        {type: mongoose.Schema.Types.ObjectId,ref:'NumbersInOperatorBubble'}
+    numbersInOperatorBubble : [ //ES UNA LISTA PORQUE: ES UNA LISTA DE CORAZONES (QUE UN CORAZON, ES UNA LISTA DE NUMEROS)
+        {type: mongoose.Schema.Types.ObjectId,ref:'NumbersInOperatorBubble'} 
     ]
 },{
     timestamps: true
