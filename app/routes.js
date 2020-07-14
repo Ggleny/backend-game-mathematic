@@ -10,24 +10,26 @@ router.get('/',(req,res)=>res.send('ok'));
 router.put('/game',Game.create);
 router.get('/game',Game.find);
 router.get('/game/:id/levels/', Game.findLevels);
-// post routes
-router.put('/lavelConfig', LevelConfig.create);
-router.get('/lavelConfig/find/:id', LevelConfig.find);
 
-router.put('/player',Player.create);
-router.get('/player/find/:id', Player.find);
+router.get('/game/multiple/level/1', Game.findMultipleLevel1);
+router.get('/game/multiple/level/2', Game.findMultipleLevel2);
+router.get('/game/multiple/level/3', Game.findMultipleLevel3);
+
+router.get('/game/eat/level/1', Game.findEatLevel1);
+router.get('/game/eat/level/2', Game.findEatLevel2);
+router.get('/game/eat/level/3', Game.findEatLevel3);
+
+
+router.get('/game/painting/level/1', Game.findPaintLevel1);
+router.get('/game/painting/level/2', Game.findPaintLevel2);
+router.get('/game/painting/level/3', Game.findPaintLevel3);
+
+
 
 router.post('/session/login',Session.login);
 router.post('/session/logout',Session.logout);
 
-/*router.get('/player/:id/score/', Player.findScore);
-router.put('/player/:id/score/', Player.putScore);
-
-router.put('/player/create',Player.create);
-router.get('/player/find/:id', Player.find);
-
-*/
-
-
+router.post('/player/score',Player.savePoints);
+router.get('/player/score',Player.getScore);
 
 module.exports = router;

@@ -1,19 +1,15 @@
 const mongoose = require('mongoose');
 const ScoreSchema = new mongoose.Schema({
-
-    sessionId:{
-        type:String
-    },
     player: {
         type: mongoose.Schema.Types.ObjectId,ref:'Player'
     },
     game: {
-        type: mongoose.Schema.Types.ObjectId,ref:'Game'
+        type: String
     },
-    levelPlay:[{
-        type: mongoose.Schema.Types.ObjectId,ref:'LevelPlay'
-    }],
-    scoreTotal:{
+    level:{
+        type: String
+    },
+    score:{
         type: Number,
     }
 },{

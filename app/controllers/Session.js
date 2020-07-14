@@ -23,7 +23,14 @@ module.exports = {
     },
 
     logout: async function(req,res){
-        
+        req.session.destroy(err => {
+            if (err) {
+                return res.send({ error: 'Logout error' })
+            }
+            res.clearCookie();
+            
+            return res.send({ 'clearSession': 'success' })
+        })
     },
     
 }
